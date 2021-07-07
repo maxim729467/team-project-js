@@ -1,0 +1,561 @@
+.auth-link {
+  margin-top: 24px;
+  cursor: pointer;
+
+  color: #c4c3ca;
+
+  transition: color 250ms $cubicBezierMain;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
+.auth-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.auth-notify {
+  height: 30px;
+  margin-top: 40px;
+  user-select: none;
+
+  &.alert {
+    color: red;
+  }
+
+  &.success {
+    color: green;
+  }
+
+  &.note {
+    color: rgb(46, 46, 255);
+  }
+
+  &.animate {
+    // animation-name: blinkingText;
+    // animation-duration: 250ms;
+    // animation-iteration-count: 2;
+  }
+}
+
+.auth-header {
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.auth-header .sign-in-text {
+  display: inline-block;
+
+  @media screen and (max-width: 400px) {
+    margin-bottom: 10px;
+  }
+
+  user-select: none;
+}
+
+.auth-toggle-header {
+  padding-bottom: 16px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.auth-toggle-header .text {
+  padding: 0 20px;
+
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.auth-toggle-label {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 16px;
+  margin: 10px auto;
+  padding: 0;
+  cursor: pointer;
+
+  border-radius: 8px;
+  background-color: $accentColor;
+
+  text-align: center;
+}
+
+.auth-toggle-label:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: -10px;
+  left: -10px;
+  z-index: 20;
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  color: $accentColor;
+  background-color: #644d88;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23ff6b08' d='M9.41,8H17a1,1,0,0,0,0-2H7a1,1,0,0,0-.38.08,1,1,0,0,0-.54.54A1,1,0,0,0,6,7V17a1,1,0,0,0,2,0V9.41l8.29,8.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+
+  transition: transform 500ms ease;
+}
+
+.auth-toggle:checked + .auth-toggle-label:before {
+  transform: translateX(44px) rotate(-270deg);
+}
+
+.card-3d-wrap {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  margin-top: 5px;
+
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 600ms ease-out;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 6px;
+  background-color: #2a2b38;
+  background-image: url('../images/pat.svg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-3d-wrapper {
+  transform: rotateY(360deg) scale(0);
+}
+
+.auth-toggle:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg) scale(0);
+}
+
+body.auth-modal-open .card-3d-wrapper {
+  transform: rotateY(0deg) scale(1);
+}
+
+body.auth-modal-open .auth-toggle:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(-180deg) scale(1);
+}
+
+.auth-form {
+  width: 100%;
+  padding: 0 35px;
+  z-index: 20;
+
+  transform: translate3d(0, 0, 35px) perspective(100px);
+}
+
+.form-field {
+  position: relative;
+  margin-top: 8px;
+}
+
+.form-style {
+  height: 48px;
+  width: 100%;
+  padding: 13px 20px 13px 55px;
+
+  border-radius: 4px;
+  outline: none;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  border: none;
+
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.5px;
+}
+
+.form-style:focus,
+.form-style:active {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+  overflow: visible;
+}
+
+.input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 18px;
+  height: 48px;
+  font-size: 24px;
+
+  color: $accentColor;
+
+  line-height: 48px;
+  text-align: left;
+
+  &::before,
+  &.auth-password-eye::after {
+    content: '';
+    height: 24px;
+    width: 24px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.logged-user {
+  color: $accentColor;
+}
+
+.input-icon:before,
+.input-icon::after {
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+}
+
+.icon-at:before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23ff6b08' d='M12,2a10,10,0,1,0,5,18.66,1,1,0,1,0-1-1.73A8,8,0,1,1,20,12v.75a1.75,1.75,0,0,1-3.5,0V8.5a1,1,0,0,0-1-1,1,1,0,0,0-1,.79A4.45,4.45,0,0,0,12,7.5,4.5,4.5,0,1,0,15.3,15,3.74,3.74,0,0,0,22,12.75V12A10,10,0,0,0,12,2Zm0,12.5A2.5,2.5,0,1,1,14.5,12,2.5,2.5,0,0,1,12,14.5Z'/%3e%3c/svg%3e");
+}
+
+.icon-lock:before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23ff6b08' d='M12,13a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V14A1,1,0,0,0,12,13Zm5-4V7A5,5,0,0,0,7,7V9a3,3,0,0,0-3,3v7a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V12A3,3,0,0,0,17,9ZM9,7a3,3,0,0,1,6,0V9H9Zm9,12a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V12a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z'/%3e%3c/svg%3e");
+}
+
+.icon-user:before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23ff6b08' d='M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z'/%3e%3c/svg%3e");
+}
+
+.auth-password {
+  padding-right: 55px;
+}
+
+.input-icon.auth-password-eye {
+  left: auto;
+  right: 18px;
+  cursor: pointer;
+
+  &::before {
+    content: none;
+  }
+}
+
+[type='password'] ~ .auth-password-eye::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 24 24'%3e%3cpath fill='%236563ff' d='M10.94,6.08A6.93,6.93,0,0,1,12,6c3.18,0,6.17,2.29,7.91,6a15.23,15.23,0,0,1-.9,1.64,1,1,0,0,0-.16.55,1,1,0,0,0,1.86.5,15.77,15.77,0,0,0,1.21-2.3,1,1,0,0,0,0-.79C19.9,6.91,16.1,4,12,4a7.77,7.77,0,0,0-1.4.12,1,1,0,1,0,.34,2ZM3.71,2.29A1,1,0,0,0,2.29,3.71L5.39,6.8a14.62,14.62,0,0,0-3.31,4.8,1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20a9.26,9.26,0,0,0,5.05-1.54l3.24,3.25a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Zm6.36,9.19,2.45,2.45A1.81,1.81,0,0,1,12,14a2,2,0,0,1-2-2A1.81,1.81,0,0,1,10.07,11.48ZM12,18c-3.18,0-6.17-2.29-7.9-6A12.09,12.09,0,0,1,6.8,8.21L8.57,10A4,4,0,0,0,14,15.43L15.59,17A7.24,7.24,0,0,1,12,18Z'/%3e%3c/svg%3e");
+}
+
+[type='password']:placeholder-shown ~ .auth-password-eye::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23404040' d='M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z'/%3e%3c/svg%3e");
+}
+
+[type='text'] ~ .auth-password-eye::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%236563ff' d='M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z'/%3e%3c/svg%3e");
+}
+
+.icon-shield {
+  display: inline-block;
+  margin-right: -5px;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+  user-select: none;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body.logged-in .auth-log-header .icon-shield {
+  height: 30px;
+  width: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23A00000' d='M12.92,15a.56.56,0,0,0-.09-.17l-.12-.15a1,1,0,0,0-1.42,0,.61.61,0,0,0-.12.15.56.56,0,0,0-.09.17.7.7,0,0,0-.06.19,1.23,1.23,0,0,0,0,.19.88.88,0,0,0,.08.39,1,1,0,0,0,1.3.54,1.19,1.19,0,0,0,.33-.22,1,1,0,0,0,.21-.32,1,1,0,0,0,.08-.39,1.23,1.23,0,0,0,0-.19A.7.7,0,0,0,12.92,15ZM12,7.36a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0v-3A1,1,0,0,0,12,7.36Zm7.63-3.71a1,1,0,0,0-.84-.2,8,8,0,0,1-6.22-1.27,1,1,0,0,0-1.14,0A8,8,0,0,1,5.21,3.45a1,1,0,0,0-.84.2A1,1,0,0,0,4,4.43v7.45a9,9,0,0,0,3.77,7.33l3.65,2.6a1,1,0,0,0,1.16,0l3.65-2.6A9,9,0,0,0,20,11.88V4.43A1,1,0,0,0,19.63,3.65ZM18,11.88a7,7,0,0,1-2.93,5.7L12,19.77,8.93,17.58A7,7,0,0,1,6,11.88V5.58a10,10,0,0,0,6-1.39,10,10,0,0,0,6,1.39Z'/%3E%3C/svg%3E");
+}
+
+body.logged-in[data-verified='true'] .auth-log-header .icon-shield {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2300A000' d='M19.63,3.65a1,1,0,0,0-.84-.2,8,8,0,0,1-6.22-1.27,1,1,0,0,0-1.14,0A8,8,0,0,1,5.21,3.45a1,1,0,0,0-.84.2A1,1,0,0,0,4,4.43v7.45a9,9,0,0,0,3.77,7.33l3.65,2.6a1,1,0,0,0,1.16,0l3.65-2.6A9,9,0,0,0,20,11.88V4.43A1,1,0,0,0,19.63,3.65ZM18,11.88a7,7,0,0,1-2.93,5.7L12,19.77,8.93,17.58A7,7,0,0,1,6,11.88V5.58a10,10,0,0,0,6-1.39,10,10,0,0,0,6,1.39ZM13.54,9.59l-2.69,2.7-.89-.9a1,1,0,0,0-1.42,1.42l1.6,1.6a1,1,0,0,0,1.42,0L15,11a1,1,0,0,0-1.42-1.42Z'/%3E%3C/svg%3E");
+}
+
+.form-style::placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+
+  transition: opacity 200ms linear;
+}
+
+.form-style:focus::placeholder {
+  opacity: 0;
+
+  transition: opacity 200ms linear;
+}
+
+.auth-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  margin-top: 24px;
+  padding: 0 30px;
+  cursor: pointer;
+
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+
+  transition: background-color 250ms $cubicBezierMain;
+
+  &:active,
+  &:focus {
+    background-color: $accentColor;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+  }
+
+  &:hover {
+    background-color: $accentColor;
+    color: #ffffff;
+    border: none;
+
+    box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+  }
+}
+
+@keyframes blinkingArrow {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.auth-open {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  right: 20px;
+
+  @media screen and (max-width: 767px) {
+    bottom: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    right: 75px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    right: 70px;
+  }
+
+  height: 50px;
+  width: 50px;
+
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+
+  font-size: 30px;
+
+  transition: color, border, box-shadow 250ms $cubicBezierMain;
+
+  &:hover {
+    color: $accentColor;
+    border: 2px solid $accentColor;
+    box-shadow: 0px 8px 23px rgba(255, 107, 1, 0.6);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+    background-color: rgb(180, 0, 0);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M21.71,20.29l-16-16h0l-2-2A1,1,0,0,0,2.29,3.71L4,5.41v6.47A9,9,0,0,0,7.77,19.2l3.65,2.61a1,1,0,0,0,1.16,0l3.65-2.61a8.21,8.21,0,0,0,.86-.7l3.2,3.21a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29Zm-6.64-2.71L12,19.77,8.93,17.58A7,7,0,0,1,6,11.88V7.41l9.67,9.68C15.48,17.26,15.28,17.42,15.07,17.58Zm-5-12.51A10.15,10.15,0,0,0,12,4.19a9.82,9.82,0,0,0,6,1.39v6.3a6.88,6.88,0,0,1-.1,1.18,1,1,0,0,0,.83,1.15h.16a1,1,0,0,0,1-.84,9.77,9.77,0,0,0,.12-1.5V4.43a1,1,0,0,0-.37-.77,1,1,0,0,0-.83-.21,7.89,7.89,0,0,1-6.23-1.27,1,1,0,0,0-1.14,0,8,8,0,0,1-2,1,1,1,0,1,0,.64,1.9Z'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+
+    transform: translate(25%, 25%);
+  }
+
+  // &::after {      // disabled arrow with a call for authentication
+  //   position: absolute;
+  //   content: 'Sign in here!';
+  //   right: 50px;
+  //   bottom: center;
+  //   width: 110px;
+  //   height: 50px;
+  //   padding-left: 10px;
+  //   opacity: 0;
+
+  //   background-color: $accentColor;
+
+  //   font-size: 15px;
+  //   font-weight: 700;
+  //   text-align: left;
+  //   text-justify: center;
+  //   line-height: 50px;
+
+  //   clip-path: polygon(0% 30%, 70% 30%, 70% 0%, 100% 50%, 70% 100%, 70% 70%, 0% 70%);
+  //   transform: translateY(-40%) rotateZ(15deg);
+  // }
+
+  // &.animated::after {
+  //   animation-name: blinkingArrow;
+  //   animation-duration: 500ms;
+  //   animation-timing-function: $cubicBezierMain;
+  //   animation-iteration-count: infinite;
+  // }
+}
+
+body.logged-in .auth-open::before {
+  background-color: rgb(0, 180, 0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c00000' d='M12.92,15a.56.56,0,0,0-.09-.17l-.12-.15a1,1,0,0,0-1.42,0,.61.61,0,0,0-.12.15.56.56,0,0,0-.09.17.7.7,0,0,0-.06.19,1.23,1.23,0,0,0,0,.19.88.88,0,0,0,.08.39,1,1,0,0,0,1.3.54,1.19,1.19,0,0,0,.33-.22,1,1,0,0,0,.21-.32,1,1,0,0,0,.08-.39,1.23,1.23,0,0,0,0-.19A.7.7,0,0,0,12.92,15ZM12,7.36a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0v-3A1,1,0,0,0,12,7.36Zm7.63-3.71a1,1,0,0,0-.84-.2,8,8,0,0,1-6.22-1.27,1,1,0,0,0-1.14,0A8,8,0,0,1,5.21,3.45a1,1,0,0,0-.84.2A1,1,0,0,0,4,4.43v7.45a9,9,0,0,0,3.77,7.33l3.65,2.6a1,1,0,0,0,1.16,0l3.65-2.6A9,9,0,0,0,20,11.88V4.43A1,1,0,0,0,19.63,3.65ZM18,11.88a7,7,0,0,1-2.93,5.7L12,19.77,8.93,17.58A7,7,0,0,1,6,11.88V5.58a10,10,0,0,0,6-1.39,10,10,0,0,0,6,1.39Z'/%3E%3C/svg%3E");
+}
+
+body.logged-in[data-verified='true'] .auth-open::before {
+  background-color: rgb(0, 180, 0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M19.63,3.65a1,1,0,0,0-.84-.2,8,8,0,0,1-6.22-1.27,1,1,0,0,0-1.14,0A8,8,0,0,1,5.21,3.45a1,1,0,0,0-.84.2A1,1,0,0,0,4,4.43v7.45a9,9,0,0,0,3.77,7.33l3.65,2.6a1,1,0,0,0,1.16,0l3.65-2.6A9,9,0,0,0,20,11.88V4.43A1,1,0,0,0,19.63,3.65ZM18,11.88a7,7,0,0,1-2.93,5.7L12,19.77,8.93,17.58A7,7,0,0,1,6,11.88V5.58a10,10,0,0,0,6-1.39,10,10,0,0,0,6,1.39ZM13.54,9.59l-2.69,2.7-.89-.9a1,1,0,0,0-1.42,1.42l1.6,1.6a1,1,0,0,0,1.42,0L15,11a1,1,0,0,0-1.42-1.42Z'/%3E%3C/svg%3E");
+}
+
+.auth-open-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.auth-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 100;
+
+  opacity: 1;
+  pointer-events: initial;
+
+  color: #c4c3ca;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+
+  transition: opacity 600ms $cubicBezierMain;
+}
+
+.auth-backdrop.auth-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.auth-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: calc(100% - 20px);
+
+  text-align: center;
+}
+
+.auth-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 25px;
+  right: 25px;
+
+  @media screen and (min-width: 767px) {
+    top: 50px;
+    right: 50px;
+  }
+
+  width: 50px;
+  height: 50px;
+
+  color: #c4c3ca;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 107, 8, 0.25);
+  cursor: pointer;
+
+  &:hover {
+    color: $accentColor;
+    background-color: rgba(255, 107, 8, 0.05);
+    box-shadow: 0px 0px 6px #ffffff;
+  }
+}
+
+.auth-close-svg {
+  fill: currentColor;
+}

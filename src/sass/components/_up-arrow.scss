@@ -1,0 +1,40 @@
+.arrow-nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  height: 60px;
+  width: 60px;
+
+  user-select: none;
+  pointer-events: initial;
+  opacity: 1;
+
+  color: #ffffff;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 8, 0.2);
+  box-shadow: 0px 0px 20px 1px white;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: rgba(255, 107, 8, 0.6);
+    cursor: pointer;
+  }
+}
+
+.arrow-nav[hidden],
+body.body-overflow .arrow-nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top {
+  bottom: 20px;
+  right: 20px;
+}
+
+.arrow-up-icon {
+  fill: currentColor;
+}

@@ -1,0 +1,38 @@
+<div class="popap__image-block">
+    <img class="popap__image" src="{{poster_path}}" alt="{{title}}">
+</div>
+<div>
+    <h2 class="popap__title">{{title}}</h2>
+    <div>
+        <div class="popap__film-block">
+            <span class="popap__film-info" id="title">Vote / Votes</span>
+            <span class="popap__film-res__number accent votes">{{vote_average}}</span>&nbsp/&nbsp
+            <span class="popap__film-res__number votes">{{vote_count}}</span>
+        </div>
+        <div class="popap__film-block">
+            <span class="popap__film-info" id="title">Popularity</span>
+            <span class="popap__film-res__number">{{popularity}}</span>
+        </div>
+        <div class="popap__film-block">
+            <span class="popap__film-info" id="title">Original Title</span>
+            <span class="popap__film-res uppersace">{{original_title}}</span>
+        </div>
+        <div class="popap__film-block">
+            <span class="popap__film-info" id="title">Genre</span>
+            <span class="popap__film-res">{{genres}}</span>
+        </div>
+    </div>
+
+    <div class="popap__block-description">
+        <h3 class="description__title">About </h3>
+        <p class="description__text">{{overview}}</p>
+    </div>
+
+    <div class="popap__buttons">
+        <button type="button" class="accent popap__button js-watched-btn button-glitter">add to Watched</button>
+        <button type="button" class="popap__button js-queue-btn button-glitter button-glitter--reverse">add to queue</button>
+        <button type="button" class="trailer-btn accent popap__button js-watched-btn button-glitter">Watch trailer</button>
+    </div>
+    <div class="popap__video-div"></div>
+    <button type="button" class="trailer-btn__close visually-hidden"></button>
+</div>

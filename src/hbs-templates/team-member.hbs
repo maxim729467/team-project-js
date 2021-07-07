@@ -1,0 +1,445 @@
+{{#each this}}  
+   <div id="{{id}}" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close cross close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">Close</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>{{name}}</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">{{profession}}</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                <p class="popup-skills">{{placeInTheTeam}}</p>
+                  
+                  <ul class="popup-skills_link">
+                      <li>{{skillsHtml}}</li>
+                      <li>{{skillsCss}}</li>
+                      <li>{{skillsJs}}</li>
+                      <li>{{skillsFigma}}</li>
+                      <li>{{skillsGit}}</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:{{email}}" class="popup-link__mail">{{email}}</a>
+                      </li>
+                      <li>
+                          <a href="tel:{{tel}}" class="popup-link__tel">{{tel}}</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="{{gitHab}}">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-instagram">
+                          <a class="popup-instagram__link" href="{{instagram}}">
+                          <svg class="instagram">
+                              <use href="./images/sprite.svg#icon-instagram">Instagram</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-facebook">
+                          <a class="popup-facebook__link" href="{{facebook}}">
+                          <svg class="facebook">
+                              <use href="./images/sprite.svg#icon-facebook">Facebook</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-telegram">
+                          <a class="popup-telegram__link" href="{{telegram}}">
+                          <svg class="telegram">
+                              <use href="./images/sprite.svg#icon-telegram">Telegram</use> 
+                          </svg>
+                          </a>
+                      </li>  
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    {{!-- <div id="popup_2" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Daria Khrushch</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                 
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_3" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Alexander Krupka</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                  
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_4" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Anastasiia Lialina</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                 
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_5" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Dmitry Kishkanev</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                 
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_6" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="cross">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Eugene Grigoraschenko</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                  
+                  
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul>
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                  </ul>
+                  <ul class="popup_social">
+     
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHab</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-instagram">
+                          <a class="popup-instagram__link" href="https://www.instagram.com/gri_zheka/">
+                          <svg class="instagram">
+                              <use href="./images/sprite.svg#icon-instagram">Instagram</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-facebook">
+                          <a class="popup-facebook__link" href="https://www.facebook.com/gl.meh.bmes/">
+                          <svg class="facebook">
+                              <use href="./images/sprite.svg#icon-facebook">Facebook</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      <li class="popup-telegram">
+                          <a class="popup-telegram__link" href="https://xn--80affa3aj0al.xn--80asehdb/#/im?p=s1406926592_14567079952095308992">
+                          <svg class="telegram">
+                              <use href="./images/sprite.svg#icon-telegram">Telegram</use> 
+                          </svg>
+                          </a>
+                      </li>                                                
+                      
+                  </ul>
+                  <div>
+                      <li class="popup-reply">
+                          <a class="popup-link popup-icon_reply" href="#popup">
+                          <svg class="reply">
+                              <use href="./images/sprite.svg#icon-reply">reply</use> 
+                          </svg>
+                          </a>
+                      </li> 
+                  </div>
+  
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_7" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Maksym Shyshko</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                  
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_8" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Oleg Slyusarov</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                  
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div>
+    <div id="popup_9" class="popup">
+      <div class="popup_body">
+          <div class="popup_content">
+              <a href="" class="popup_close close-popup">
+                  <svg class="github">
+                      <use href="./images/sprite.svg#icon-cross">GitHub</use> 
+                  </svg>
+              </a>
+              <div class="popup_title">
+                  <span>Roman Kochetov</span></div>
+              <div class="popup_text">
+                  <h2 class="popup-proff">Full Stack Developer</h2>
+                  <p class="popup-skills">Tech Skills</p>
+                 
+                  <ul class="popup-skills_link">
+                      <li>☣ HTML</li>
+                      <li>☣ CSS</li>
+                      <li>☣ JS</li>
+                      <li>☣ Figma</li>
+                      <li>☣ GitHab</li>
+                  </ul>
+                  <ul class="popup_social">
+                      <li>
+                          <a href="mailto:gl.meh.bmes.od@gmail.com" class="popup-link__mail">gl.meh.bmes.od@gmail.com</a>
+                      </li>
+                      <li>
+                          <a href="tel:+380992175389" class="popup-link__tel">+38 099 217 53 89</a>
+                      </li>
+                      <li class="popup-github">
+                          <a class="popup-github__link" href="https://github.com/JackGre">
+                          <svg class="github">
+                              <use href="./images/sprite.svg#icon-github">GitHub</use> 
+                          </svg>
+                          </a>
+                      </li>
+                      
+                      
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </div> --}}
+{{/each}}

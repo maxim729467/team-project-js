@@ -1,0 +1,63 @@
+<header class="section__header">
+  <div class="container header">
+    <nav class="header__navigation">
+      <a class="logo" href="index.html">
+        <svg width="24" height="24" class="logo__icon">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <p class="logo__text">Filmoteka</p>
+      </a>
+      <ul class="header__links">
+        <li class="link__home">
+          <a class="link__item current js-home-btn" href="index.html">Home</a>
+        </li>
+        <li class="link__library"><a class="link__item js-library-btn" href="">my library</a></li>
+      </ul>
+    </nav>
+    <div class="search-nav">
+      <form action="URL" class="header__search">
+        <input
+          name="query"
+          class="search__input"
+          type="text"
+          placeholder="Type to search"
+          autocomplete="off"
+        />
+        <svg class="search__icon" width="12" height="12">
+          <use href="./images/sprite.svg#icon-search"></use>
+        </svg>
+        <p class="search-error search__result"></p>
+      </form>
+    
+    </div>
+
+
+    <div class="library visually-hidden">
+            <ul class="library__list">
+                <li class="library__item">
+                    <button class="library__btn button-glitter js-btn-watched  checked">Watched</button>
+                </li>
+                <li class="library__item">
+                    <button class="library__btn button-glitter js-btn-queue">queue</button>
+                </li>
+            </ul>
+        <p class="search-error"></p>
+    </div>
+
+  <button type="button" class="value-btn button-glitter" aria-expanded="false" data-menu-button>
+  <span class="value">GENRES</span>
+  <svg class="arrow-down" aria-label="Переключатель меню">
+    <use href="./images/sprite.svg#icon-arrow-down"></use>
+  </svg>
+  <svg class="icon-close" aria-label="Переключатель меню">
+    <use href="./images/sprite.svg#icon-close"></use>
+  </svg>
+</button>
+    <!-- Кнопка открытия модального окна аутентификации -->
+    <button class="auth-open" data-action="auth-open">
+      <svg class="auth-open-icon">
+        <use href="./images/sprite.svg#icon-user"></use>
+      </svg>
+    </button>
+</div>
+</header>

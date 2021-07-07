@@ -1,0 +1,105 @@
+<div class="auth-backdrop auth-hidden" data-action="auth-backdrop">
+  <div class="auth-popup">
+    <h4 class="auth-toggle-header">
+      <span class="text">Log In </span><span class="text">Sign Up</span>
+    </h4>
+    <input class="auth-toggle visually-hidden" type="checkbox" id="reg-log" name="reg-log" />
+    <label for="reg-log" class="auth-toggle-label"></label>
+
+    <p class="auth-text auth-notify" data-action="auth-notify">&nbsp;</p>
+
+    <div class="card-3d-wrap">
+      <div class="card-3d-wrapper">
+        <div class="card-front">
+          <form class="form-log auth-form">
+            <h3 class="auth-header auth-log-header" id="logheader">
+              <i class="icon-shield" data-action="verify-email">&nbsp;</i>
+              <span class="sign-in-text" id="sign-in-text">Log In</span>
+              <span class="logged-user" id="logged-user"></span>
+            </h3>
+            <div class="form-field">
+              <input
+                type="email"
+                name="logemail"
+                class="form-style"
+                placeholder="Your Email"
+                id="logemail"
+                autocomplete="off"
+              />
+              <i class="input-icon icon-at"></i>
+            </div>
+            <div class="form-field">
+              <input
+                type="password"
+                name="logpass"
+                class="form-style auth-password"
+                placeholder="Your Password"
+                id="logpass"
+                autocomplete="off"
+                data-action="input-password"
+              />
+              <i class="input-icon icon-lock"></i>
+              <i class="input-icon auth-password-eye" data-action="toggle-password"></i>
+            </div>
+            <button type="submit" class="auth-button button-glitter" data-action="log-button">
+              Log In
+            </button>
+            <p class="auth-text">
+              <a href="#0" class="auth-link" data-action="password-reset">Forgot your password?</a>
+            </p>
+          </form>
+        </div>
+
+        <div class="card-back">
+          <form class="form-sign auth-form">
+            <h3 class="auth-header auth-sign-header">Sign Up</h3>
+            <div class="form-field">
+              <input
+                type="text"
+                name="signname"
+                class="form-style"
+                placeholder="Your Full Name"
+                id="signname"
+                autocomplete="off"
+              />
+              <i class="input-icon icon-user"></i>
+            </div>
+            <div class="form-field">
+              <input
+                type="email"
+                name="signemail"
+                class="form-style"
+                placeholder="Your Email"
+                id="signemail"
+                autocomplete="off"
+              />
+              <i class="input-icon icon-at"></i>
+            </div>
+            <div class="form-field">
+              <input
+                type="password"
+                name="signpass"
+                class="form-style auth-password"
+                placeholder="Your Password"
+                id="signpass"
+                autocomplete="off"
+                data-action="input-password"
+              />
+              <i class="input-icon icon-lock"></i>
+              <i class="input-icon auth-password-eye" data-action="toggle-password"></i>
+            </div>
+            <button type="submit" class="auth-button button-glitter" data-action="sign-button">
+              Sign Up
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="auth-close" data-action="auth-close">
+    <svg class="auth-close-svg">
+      <use href="./images/sprite.svg#icon-close"></use>
+    </svg>
+  </button>
+</div>
